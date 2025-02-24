@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My wed</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            padding: 0;
+            background: linear-gradient(to right,
+                    #6fc3ff 0% 20%,
+                    pink 20% 40%,
+                    white 40% 60%,
+                    pink 60% 80%,
+                    #6fc3ff 80% 100%);
+            background-size: 100% 100%;
+            margin: 0;
+            height: 100vh;
+        }
+
+
+        #toggleSidebarButton {
+            display: none;
+            margin: 10px;
+        }
+
+        @media (max-width: 960px) {
+            #sidebar {
+                display: none;
+            }
+
+            #toggleSidebarButton {
+                display: block;
+            }
+        }
+    </style>
+
+</head>
+
+<body style="" class="flex ">
+    <!-- 侧边栏 -->
+    <div id="sidebar" style="flex:1;flex-direction: column;" class="">
+        <!--头像-->
+        <div style="height: 20%;" class="flex1 rcorners1 mg yinying">
+            <img src="./touXiang.jpg" style="max-width: 100%; max-height: 100%; width: auto; height: auto;"
+                class="rcorners1 yinying shadow2" />
+        </div>
+
+        <!-- 信息 -->
+        <div style="height: 30%;flex-direction: column;text-align: center;" class="rcorners1 mg yinying ">
+            <h1>My wed</h1>
+            <button class="button" onclick="this.innerHTML='姝怡'">称呼</button>
+            <button class="button" onclick="this.innerHTML='MTF'">我是</button>
+        </div>
+        <!-- 菜单 -->
+        <div style="height: 46%;flex-direction: column;" class="flex rcorners1 mg yinying button-container">
+            <button class="button" onclick="toggleImage('ziPai1.jpg')">一</button>
+            <button class="button" onclick="toggleImage('ziPai2.jpg')">二</button>
+            <button class="button" onclick="toggleImage('ziPai3.jpg')">三</button>
+            <button class="button" onclick="toggleImage('ziPai4.jpg')">四</button>
+            <button class="button" onclick="this.innerHTML='你想啥'">推</button>
+            <a href="https://space.bilibili.com/55533439" class="button">Bili</a>
+            <button class="button" onclick="toggleImage('zanShang.jpg')">V50</button>
+        </div>
+    </div>
+
+    <!-- 主体 -->
+    <div style="flex:5;flex-direction: column;" class="flex">
+        <!-- 头部栏 -->
+        <div style="flex:1; position: relative;" class="flex1 rcorners1 mg yinying shadow2">
+            <!-- 添加按钮 -->
+            <button id="toggleSidebarButton" onclick="toggleSidebar()" class=" button rcorners1 yinying shadow1"
+                style="position: absolute; left: 10px; top: 10px; width: 50px; height: 50px; padding: 0; border: none; background-color: #4caf4fc6; color: white; cursor: pointer;font-size: 40px">≡</button>
+            <h1>Hello! Welcome to My wed!</h1>
+        </div>
+
+        <!-- 内容大块 -->
+        <div style="flex:8;flex-direction: column;" class="flex">
+            <!--内容区-->
+            <div id="contentArea" style="flex:8;flex-direction: column" class="flex1 rcorners1 mg yinying">
+                <button class="button" onclick="addContentRow()">
+                    <p>这里什么都没有！略略略~</p>
+                </button>
+            </div>
+            <!--底部栏-->
+            <div style="flex: 1;" class=" flex1 rcorners1 mg yinying shadow2">
+                <P>这里什么都没有！略略略~</P>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

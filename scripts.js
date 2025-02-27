@@ -31,17 +31,26 @@ window.addEventListener("load", function () {
 // 图片切换函数
 function toggleImage(imageSrc) {
   var contentArea = document.getElementById("contentArea");
+  var imgTag = `<img src="./${imageSrc}" style="max-width: 50%; max-height: 50%; width: auto; height: auto;" />`;
+
+  // 如果当前内容是图片，并且点击的图片与当前显示的图片相同，则隐藏图片并恢复默认内容
   if (contentArea.innerHTML.includes("<img")) {
-    // 如果当前内容是图片，则复原为默认文本
-    contentArea.innerHTML = `
+    var currentImgSrc = contentArea.querySelector("img").getAttribute("src");
+    if (currentImgSrc === `./${imageSrc}`) {
+      contentArea.innerHTML = `
                 <button class="button" onclick="addContentRow()">
                     <p>略略略~</p>
                 </button>`;
+    } else {
+      // 如果点击的图片与当前显示的图片不同，则替换为新图片
+      contentArea.innerHTML = imgTag;
+    }
   } else {
     // 如果当前内容不是图片，则替换为图片
-    contentArea.innerHTML = `<img src="./${imageSrc}" style="max-width: 80%; max-height: 80%; width: auto; height: auto;" />`;
+    contentArea.innerHTML = imgTag;
   }
 }
+
 // 内容滚动函数
 const paragraphs = [
   "这是第一行内容",

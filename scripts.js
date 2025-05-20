@@ -71,6 +71,9 @@ const paragraphs = [
   "哎~难以启齿。。。",
   "嗯~~~",
   "没了！哎嘿~",
+  "520快乐哇!",
+  "你不会是一个人过吧!",
+  "真可怜~略略略~",
 ];
 
 let currentParagraphCount = 0;
